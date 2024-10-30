@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox id="webcrumbs" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.myapp.MainAppUIController" alignment="CENTER" spacing="10">
+    <!-- Container -->
+    <VBox styleClass="w-[900px] bg-neutral-50 shadow rounded-lg p-4">
+
+        <!-- Title Bar -->
+        <HBox alignment="CENTER" styleClass="flex justify-between">
+            <Label text="Smart Plant Care Management System" styleClass="font-title text-lg"/>
+            <HBox styleClass="flex gap-2">
+                <Button text="_" styleClass="text-neutral-700"/>
+                <Button text="□" styleClass="text-neutral-700"/>
+                <Button text="X" styleClass="text-neutral-700"/>
+            </HBox>
+        </HBox>
+
+        <!-- Tabs -->
+        <HBox spacing="10" styleClass="flex mt-6 gap-2">
+            <Button text="Add Plant" styleClass="px-4 py-2 w-full bg-primary-200 text-primary-900 rounded-md border-b-2 border-primary-500"/>
+            <Button text="View All Plants" styleClass="px-4 py-2 w-full bg-primary-200 text-primary-900 rounded-md border-b-2 border-primary-500"/>
+            <Button text="Plants Needing Water" styleClass="px-4 py-2 w-full bg-primary-200 text-primary-900 rounded-md border-b-2 border-primary-500"/>
+        </HBox>
+
+        <!-- Form Section -->
+        <VBox styleClass="mt-6">
+            <Label text="Plant Name:" styleClass="text-neutral-900"/>
+            <TextField fx:id="plantNameField" text="Money Plant" styleClass="block w-full mt-1 border border-neutral-400 rounded-md p-2"/>
+
+            <Label text="Plant Type (Indoor/Outdoor):" styleClass="text-neutral-900"/>
+            <ComboBox fx:id="plantTypeComboBox" styleClass="block w-full mt-1 border border-neutral-400 rounded-md p-2">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="Indoor"/>
+                        <String fx:value="Outdoor"/>
+                    </FXCollections>
+                </items>
+            </ComboBox>
+
+            <Label text="Watering Frequency (days):" styleClass="text-neutral-900"/>
+            <TextField fx:id="wateringFrequencyField" text="7" styleClass="block w-[80px] mt-1 border border-neutral-400 rounded-md p-2"/>
+
+            <Button text="Add Plant" styleClass="px-4 py-2 bg-primary-200 text-primary-900 rounded-md"/>
+        </VBox>
+    </VBox>
+</VBox>
